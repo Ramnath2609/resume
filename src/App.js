@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { GridLayout, FlexBox } from "./common-styles";  
 import Profilepic from "./assets/profilepic.jpg";
+import Download from "./assets/download.png";
 import {
   AcademicCapIcon,
   BuildingOffice2Icon,
@@ -235,6 +236,16 @@ const SkillsBlock = styled(GridLayout)`
     }
 `;
 
+const Button = styled.button`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  height: 100px;
+`;
+
 function Resume() {
   return (
     <Page>
@@ -261,7 +272,7 @@ function Resume() {
             </FlexBox>
           </StyledGridLayout>
         </AboutContent>
-      </About>
+      </About>IndividualBlock
       <ResumeSection>
         <ResumeContent>
           <IndividualBlock flexDirection="column" height="auto">
@@ -324,6 +335,12 @@ function Resume() {
           </IndividualBlock>
         </ResumeContent>
       </ResumeSection>
+      <FlexBox>
+          <Button src={Download} onClick={() => window.open("/Shan_Resume.pdf")}>
+            <img src={Download} alt="pdf" />
+            Download
+          </Button>
+      </FlexBox>
     </Page>
   );
 }
